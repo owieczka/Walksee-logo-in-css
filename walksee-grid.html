@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Walksee Logo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--<script charset="utf-8" type="module" src="js/main.js"></script>-->
+  <!--<link rel="stylesheet" href="css/reset.css" />-->
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background: #f7f5ff;
+      overflow: hidden;
+    }
+
+    .walksee-logo {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      
+      /*outline: 1px solid red;*//*For Debug only*/
+
+      --cicle-radius: calc(3 / 8);
+      --door-size: calc(2 / 3 * var(--cicle-radius));
+      --color: #19DAFF;
+    }
+
+    .walksee-logo::before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: calc((1 - 2 * var(--cicle-radius)) * 50%);
+      top: calc((1 - 2 * var(--cicle-radius)) * 50%);
+      width: calc(2 * var(--cicle-radius) * 100%);
+      height: calc(2 * var(--cicle-radius) * 100%);
+      /*margin: calc((1 - 2 * var(--cicle-radius)) * 50%);*/
+      border-radius: 50%;
+      background-color: var(--color);
+    }
+
+    .walksee-logo::after {
+      content: "";
+      position: absolute;
+      display: block;      
+      left: calc(50% - var(--door-size) * 50%);
+      top: calc(50% - var(--door-size) * 4 / 3 * 50%);
+      width: calc(var(--door-size) * 100%);
+      height: calc(var(--door-size) * 4 / 3 * 100%);
+      border-radius: calc(var(--door-size) * 50%);
+      background-color: #FFFFFF;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="walksee-logo" style="--color:#19DAFF;"></div>
+    <div class="walksee-logo" style="--color:#19ffd0;"></div>
+    <div class="walksee-logo" style="--color:#191dff;"></div>
+    <div class="walksee-logo" style="--color:#be19ff;"></div>
+  </div>
+</body>
+</html>
